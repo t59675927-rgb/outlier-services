@@ -1,40 +1,38 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
 
 export default function Sidebar() {
-  const [collapsed, setCollapsed] = useState(false);
-
   return (
-    <div
-      className={`bg-blue-900 text-white h-full transition-all ${
-        collapsed ? "w-16" : "w-64"
-      }`}
-    >
-      {/* Toggle */}
-      <div className="p-3 border-b border-blue-700 flex justify-between items-center">
-        {!collapsed && <span className="font-semibold">Menu</span>}
-        <button onClick={() => setCollapsed(!collapsed)}>
-          {collapsed ? "➡️" : "⬅️"}
-        </button>
+    <div className="w-60 h-full bg-blue-800 text-white">
+      {/* Header */}
+      <div className="p-4 border-b border-blue-700">
+        <span className="text-sm font-medium">Menu</span>
       </div>
 
-      {/* Links */}
-      <nav className="p-3 space-y-3">
-        <Link href="/" className="block hover:text-gray-300">
-          🧾 {!collapsed && "New Transaction"}
+      {/* Navigation */}
+      <nav className="p-2 space-y-1">
+        <Link
+          href="/"
+          className="block px-3 py-2 text-sm rounded hover:bg-blue-700"
+        >
+          New Transaction
         </Link>
 
-        <Link href="#" className="block hover:text-gray-300">
-          📊 {!collapsed && "Reports"}
+        <Link
+          href="/reports"
+          className="block px-3 py-2 text-sm rounded hover:bg-blue-700"
+        >
+          Reports
         </Link>
 
-        <Link href="#" className="block hover:text-gray-300">
-          ⚙️ {!collapsed && "Settings"}
+        <Link
+          href="/settings"
+          className="block px-3 py-2 text-sm rounded hover:bg-blue-700"
+        >
+          Settings
         </Link>
       </nav>
     </div>
   );
 }
-``;

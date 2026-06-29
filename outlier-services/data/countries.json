@@ -1,12 +1,12 @@
 [
-    {
-      "Country_Code": "IN",
-      "Country_Name": "India",
-      "Currency_Code": "INR"
-    },
-    {
-      "Country_Code": "UK",
-      "Country_Name": "United Kingdom",
-      "Currency_Code": "GBP"
-    }
-  ]
+  {
+    "Country_Code": "IN",
+    "Country_Name": "India",
+    "Currency_Code": "INR"
+  },
+  {
+    "Country_Code": "AE",
+    "Country_Name": "UAE",
+    "Currency_Code": "AED"
+  }
+]

@@ -1,71 +1,41 @@
 "use client";
+
 import { createContext, useContext, useState } from "react";
 
-export const AppContext = createContext<any>(null);
+type AppState = {
+  selectedCountry: string | null;
+  selectedVAC: string | null;
+  currency: string;
+  setSelectedCountry: (v: string | null) => void;
+  setSelectedVAC: (v: string | null) => void;
+  setCurrency: (v: string) => void;
+};
 
-export const AppProvider = ({ children }: any) => {
-  const [country, setCountry] = useState(null);
-  const [vac, setVac] = useState(null);
-  const [cart, setCart] = useState([]);
-  const [paymentMode, setPaymentMode] = useState(null);
+const AppContext = createContext<AppState | null>(null);
 
-  const addToCart = (service: any) => {
-    setCart((prev: any) => {
-      const existing = prev.find((i: any) => i.code === service.Service_Code);
-
-      if (existing) {
-        return prev.map((i: any) =>
-          i.code === service.Service_Code ? { ...i, qty: i.qty + 1 } : i
-        );
-      }
-
-      return [
-        ...prev,
-        {
-          code: service.Service_Code,
-          name: service.Service_Name,
-          price: service.Unit_Price,
-          qty: 1,
-        },
-      ];
-    });
-  };
-
-  const updateQty = (code: string, delta: number) => {
-    setCart((prev: any) =>
-      prev
-        .map((item: any) =>
-          item.code === code
-            ? { ...item, qty: Math.max(0, item.qty + delta) }
-            : item
-        )
-        .filter((i: any) => i.qty > 0)
-    );
-  };
-
-  const total = cart.reduce(
-    (acc: number, item: any) => acc + item.price * item.qty,
-    0
-  );
+export function AppProvider({ children }: { children: React.ReactNode }) {
+  const [selectedCountry, setSelectedCountry] = useState<string | null>(null);
+  const [selectedVAC, setSelectedVAC] = useState<string | null>(null);
+  const [currency, setCurrency] = useState("INR");
 
   return (
     <AppContext.Provider
       value={{
-        country,
-        setCountry,
-        vac,
-        setVac,
-        cart,
-        addToCart,
-        updateQty,
-        total,
-        paymentMode,
-        setPaymentMode,
+        selectedCountry,
+        selectedVAC,
+        currency,
+        setSelectedCountry,
+        setSelectedVAC,
+        setCurrency,
       }}
     >
       {children}
     </AppContext.Provider>
   );
-};
+}
 
-export const useApp = () => useContext(AppContext);
+export function useApp() {
+  const context = useContext(AppContext);
+  if (!context) throw new Error("useApp must be used inside AppProvider");
+  return context;
+}

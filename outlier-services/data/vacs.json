@@ -1,17 +1,17 @@
 [
-    {
-      "VAC_Code": "MUM",
-      "VAC_Name": "Mumbai VAC",
-      "Country_Code": "IN"
-    },
-    {
-      "VAC_Code": "DEL",
-      "VAC_Name": "Delhi VAC",
-      "Country_Code": "IN"
-    },
-    {
-      "VAC_Code": "LON",
-      "VAC_Name": "London VAC",
-      "Country_Code": "UK"
-    }
-  ]
+  {
+    "VAC_Code": "BLR01",
+    "VAC_Name": "Bangalore VAC",
+    "Country_Code": "IN"
+  },
+  {
+    "VAC_Code": "DEL01",
+    "VAC_Name": "Delhi VAC",
+    "Country_Code": "IN"
+  },
+  {
+    "VAC_Code": "DXB01",
+    "VAC_Name": "Dubai VAC",
+    "Country_Code": "AE"
+  }
+]

@@ -1,14 +1,12 @@
 [
-    {
-      "Currency_Code": "INR",
-      "Currency_Name": "Indian Rupee",
-      "Currency_Symbol": "₹",
-      "Country_Code": "IN"
-    },
-    {
-      "Currency_Code": "GBP",
-      "Currency_Name": "British Pound",
-      "Currency_Symbol": "£",
-      "Country_Code": "UK"
-    }
-  ]
+  {
+    "Currency_Code": "INR",
+    "Currency_Name": "Indian Rupee",
+    "Currency_Symbol": "₹"
+  },
+  {
+    "Currency_Code": "AED",
+    "Currency_Name": "UAE Dirham",
+    "Currency_Symbol": "د.إ"
+  }
+]
