@@ -1,43 +1,25 @@
 "use client";
 
 import countries from "@/data/countries.json";
-import vacs from "@/data/vacs.json";
-import currencies from "@/data/currency.json";
+import vacs from "@/data/vac.json";
 import { useApp } from "@/context/AppContext";
 
 export default function CountryVACSelector() {
-  const {
-    selectedCountry,
-    selectedVAC,
-    setSelectedCountry,
-    setSelectedVAC,
-    setCurrency,
-  } = useApp();
-
-  const filteredVACs = vacs.filter((v) => v.Country_Code === selectedCountry);
-
-  const handleCountryChange = (code: string) => {
-    setSelectedCountry(code);
-    setSelectedVAC(null);
-
-    const country = countries.find((c) => c.Country_Code === code);
-    if (country) {
-      setCurrency(country.Currency_Code);
-    }
-  };
+  const { selectedCountry, selectedVAC, setSelectedCountry, setSelectedVAC } =
+    useApp();
 
   return (
-    <div className="bg-white p-4 rounded-lg shadow mb-4">
+    <div className="bg-white p-4 rounded-lg shadow">
       <div className="grid grid-cols-2 gap-4">
         {/* Country */}
         <div>
-          <label className="block text-sm text-gray-600 mb-1">
+          <label className="block text-xs font-medium text-gray-500 mb-1">
             Select Country
           </label>
           <select
-            className="w-full border rounded p-2"
+            className="w-full border border-gray-300 rounded p-2 focus:ring-1 focus:ring-blue-400"
             value={selectedCountry || ""}
-            onChange={(e) => handleCountryChange(e.target.value)}
+            onChange={(e) => setSelectedCountry(e.target.value)}
           >
             <option value="">-- Select Country --</option>
             {countries.map((c) => (
@@ -50,15 +32,16 @@ export default function CountryVACSelector() {
 
         {/* VAC */}
         <div>
-          <label className="block text-sm text-gray-600 mb-1">Select VAC</label>
+          <label className="block text-xs font-medium text-gray-500 mb-1">
+            Select VAC
+          </label>
           <select
-            className="w-full border rounded p-2"
+            className="w-full border border-gray-300 rounded p-2 focus:ring-1 focus:ring-blue-400"
             value={selectedVAC || ""}
             onChange={(e) => setSelectedVAC(e.target.value)}
-            disabled={!selectedCountry}
           >
             <option value="">-- Select VAC --</option>
-            {filteredVACs.map((v) => (
+            {vacs.map((v) => (
               <option key={v.VAC_Code} value={v.VAC_Code}>
                 {v.VAC_Name}
               </option>
@@ -67,11 +50,11 @@ export default function CountryVACSelector() {
         </div>
       </div>
 
-      {/* Display selection */}
-      {selectedCountry && (
-        <div className="mt-4 text-sm text-gray-700">
-          <strong>Selected:</strong> {selectedCountry}
-          {selectedVAC && ` → ${selectedVAC}`}
+      {/* Selection Display (Improved) */}
+      {(selectedCountry || selectedVAC) && (
+        <div className="mt-4 p-2 bg-blue-50 border border-blue-200 rounded text-sm">
+          <span className="font-medium text-blue-700">Selected:</span>{" "}
+          {selectedCountry || "-"} {selectedVAC ? `→ ${selectedVAC}` : ""}
         </div>
       )}
     </div>

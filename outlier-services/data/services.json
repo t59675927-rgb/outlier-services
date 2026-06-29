@@ -1,38 +1,34 @@
 [
-    {
-      "Service_Code": "SRV1",
-      "Service_Name": "Xerox",
-      "Service_Type": "VAS",
-      "Currency_Code": "INR",
-      "Unit_Price": 10,
-      "Country_Code": "IN",
-      "VAC_Code": "MUM"
-    },
-    {
-      "Service_Code": "SRV2",
-      "Service_Name": "Printout",
-      "Service_Type": "VAS",
-      "Currency_Code": "INR",
-      "Unit_Price": 20,
-      "Country_Code": "IN",
-      "VAC_Code": "MUM"
-    },
-    {
-      "Service_Code": "SRV3",
-      "Service_Name": "Photo Service",
-      "Service_Type": "VAS",
-      "Currency_Code": "INR",
-      "Unit_Price": 50,
-      "Country_Code": "IN",
-      "VAC_Code": "DEL"
-    },
-    {
-      "Service_Code": "SRV4",
-      "Service_Name": "Courier",
-      "Service_Type": "VAS",
-      "Currency_Code": "GBP",
-      "Unit_Price": 5,
-      "Country_Code": "UK",
-      "VAC_Code": "LON"
-    }
-  ]
+  {
+    "Service_Code": "SRV001",
+    "Service_Name": "Xerox",
+    "Service_Type": "VAS",
+    "Currency_Code": "INR",
+    "Unit_Price": 5,
+    "Country_Code": "IN"
+  },
+  {
+    "Service_Code": "SRV002",
+    "Service_Name": "Printout",
+    "Service_Type": "VAS",
+    "Currency_Code": "INR",
+    "Unit_Price": 10,
+    "Country_Code": "IN"
+  },
+  {
+    "Service_Code": "SRV003",
+    "Service_Name": "Photoshoot",
+    "Service_Type": "VAS",
+    "Currency_Code": "INR",
+    "Unit_Price": 150,
+    "Country_Code": "IN"
+  },
+  {
+    "Service_Code": "SRV004",
+    "Service_Name": "Document Scan",
+    "Service_Type": "VAS",
+    "Currency_Code": "AED",
+    "Unit_Price": 5,
+    "Country_Code": "AE"
+  }
+]
