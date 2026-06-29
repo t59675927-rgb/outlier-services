@@ -1,0 +1,22 @@
+[
+    {
+      "Payment_Code": "CASH_INR",
+      "Payment_Name": "Cash",
+      "Currency_Code": "INR"
+    },
+    {
+      "Payment_Code": "CARD_INR",
+      "Payment_Name": "Card",
+      "Currency_Code": "INR"
+    },
+    {
+      "Payment_Code": "CASH_GBP",
+      "Payment_Name": "Cash",
+      "Currency_Code": "GBP"
+    },
+    {
+      "Payment_Code": "CARD_GBP",
+      "Payment_Name": "Card",
+      "Currency_Code": "GBP"
+    }
+  ]

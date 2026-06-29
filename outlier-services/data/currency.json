@@ -1,0 +1,14 @@
+[
+    {
+      "Currency_Code": "INR",
+      "Currency_Name": "Indian Rupee",
+      "Currency_Symbol": "₹",
+      "Country_Code": "IN"
+    },
+    {
+      "Currency_Code": "GBP",
+      "Currency_Name": "British Pound",
+      "Currency_Symbol": "£",
+      "Country_Code": "UK"
+    }
+  ]

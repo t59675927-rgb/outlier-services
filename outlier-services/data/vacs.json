@@ -1,0 +1,17 @@
+[
+    {
+      "VAC_Code": "MUM",
+      "VAC_Name": "Mumbai VAC",
+      "Country_Code": "IN"
+    },
+    {
+      "VAC_Code": "DEL",
+      "VAC_Name": "Delhi VAC",
+      "Country_Code": "IN"
+    },
+    {
+      "VAC_Code": "LON",
+      "VAC_Name": "London VAC",
+      "Country_Code": "UK"
+    }
+  ]
